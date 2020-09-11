@@ -34,9 +34,9 @@
 [Continuous Integration (CI)](https://en.wikipedia.org/wiki/Continuous_integration) is at the core of all modern software development.
 
 Every time a new code change is submitted to the project we want to integrate
-those changes into the project tests as quickly as possible.
+those changes into the project as quickly as possible.
 
-Integrating new code changes happens continuously as developers submmit Pull
+Integrating new code changes happens continuously as developers submit Pull
 Requests on Github.
 
 However, in order to ensure the stability of the existing code base there are
@@ -48,8 +48,7 @@ jobs that run tests automatically when a PR is submitted.
 ### What is the Signal that we are looking for?
 
 When we talk about "CI Signal" we are referring to the evidence provided by
-running tests on a new code change that allows us to make either of the  
-following determiniations.
+running tests on a new code change that allows us to make either of the following determiniations:
 
 "Yes, this new code can be safely integrated into our code base!" 
 
@@ -62,11 +61,11 @@ or
 
 ### What is the noise that disrupts the CI Signal?
 
-Sometimes tests run as part of CI intermittently flip between failing and
+Sometimes, tests run as part of CI, intermittently flip between failing and
 succeeding in a non-deterministic way.
 
-Ideally, a test should fail only when there is a problem with the code 
-that is the Signal that we are looking for.
+Ideally, a test should fail only when there is a problem with the code being tested. 
+That is the Signal that we need.
 
 Tests that provide inconsistent results for the same code commit and the same
 infrastructure commit are called falky tests. 
@@ -107,12 +106,9 @@ On the Kubernetes Project, the CI Signal Team is assembled on a per-release basi
 
 We eliminate noise from the code quality signal provided by the Continuous Integration jobs
 
-Let break that statement down:
+The CI Signal team seek out flaky tests and reports them as Github Issues to the wider Kubernetes community so that we can eradicate non-deterministic test results.
 
-
-<a id="org26e6940"></a>
-
-### Using test-grid to find flaky tests on kubernetes?
+### Using test-grid to find flaky tests on Kubernetes
 
 Test Grid is a CI result presentation tool that is the starting point for
 reviewing tests results on kubernetes, The summary page of the
